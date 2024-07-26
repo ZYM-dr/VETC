@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>预测小程序</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h1>预测小程序</h1>
+        <div>
+            <label>GGT: <input v-model.number="GGT" type="number" placeholder="输入GGT"></label><br>
+            <label>NLR: <input v-model.number="NLR" type="number" placeholder="输入NLR"></label><br>
+            <label>Intratumoral artery: <input v-model.number="IntratumoralArtery" type="number" placeholder="输入Intratumoral artery"></label><br>
+            <label>Necrosis: <input v-model.number="Necrosis" type="number" placeholder="输入Necrosis"></label><br>
+            <label>AEF: <input v-model.number="AEF" type="number" placeholder="输入AEF"></label><br>
+            <label>Iner_rad score: <input v-model.number="InerRadScore" type="number" placeholder="输入Iner_rad score"></label><br>
+        </div>
+        <button @click="getPrediction">预测</button>
+        <p v-if="vetcPrediction !== null">VETC 预测结果: {{ vetcPrediction }}</p>
+    </div>
+
+    <script>
+    new Vue({
+        el: '#app',
+        data: {
+            GGT: null,
+            NLR: null,
+            IntratumoralArtery: null,
+            Necrosis: null,
+            AEF: null,
+            InerRadScore: null,
+            vetcPrediction: null,
+        },
+        methods: {
+            async getPrediction() {
+                try {
+                    const response = await axios.post('/predict', {
+                        GGT: this.GGT,
+                        NLR: this.NLR,
+                        IntratumoralArtery: this.IntratumoralArtery,
+                        Necrosis: this.Necrosis,
+                        AEF: this.AEF,
+                        InerRadScore: this.InerRadScore,
+                    });
+                    this.vetcPrediction = response.data.vetc_prediction;
+                } catch (error) {
+                    console.error("Error during prediction:", error);
+                }
+            },
+        },
+    });
+    </script>
+</body>
+</html>
