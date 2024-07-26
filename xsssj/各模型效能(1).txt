@@ -1,0 +1,57 @@
+3指标/RBF+cT1
+Accuracy: 0.85
+Precision: 0.8554032258064517
+Recall: 0.85
+F1-score: 0.8489265465186624
+
+Class normal: AUC = 0.8608
+Class normal renal function: AUC = 0.8822
+Class renal dysfunction: AUC = 0.9810
+
+F1阈值最高点
+Class normal: Best Threshold Value = 0.1935
+Class normal renal function: Best Threshold Value = 0.1000
+Class renal dysfunction: Best Threshold Value = 0.0500
+
+Class normal: Sensitivity = 0.7391, Specificity = 0.9189, Accuracy = 0.8500
+Class normal renal function: Sensitivity = 0.9259, Specificity = 0.8182, Accuracy = 0.8667
+Class renal dysfunction: Sensitivity = 0.9000, Specificity = 1.0000, Accuracy = 0.9833
+
+
+RBF+mT1
+Accuracy: 0.8
+Precision: 0.8235119047619047
+Recall: 0.8
+F1-score: 0.7960116378622322
+
+Class normal: AUC = 0.8249
+Class normal renal function: AUC = 0.8215
+Class renal dysfunction: AUC = 0.9660
+
+Class normal: Best Threshold Value = 0.2571
+Class normal renal function: Best Threshold Value = 0.1250
+Class renal dysfunction: Best Threshold Value = 0.0286
+
+Class normal: Sensitivity = 0.6087, Specificity = 0.9459, Accuracy = 0.8167
+Class normal renal function: Sensitivity = 0.9259, Specificity = 0.6970, Accuracy = 0.8000
+Class renal dysfunction: Sensitivity = 0.9000, Specificity = 1.0000, Accuracy = 0.9833
+
+
+mT+cT1
+Accuracy: 0.7333333333333333
+Precision: 0.7568369453044376
+Recall: 0.7333333333333333
+F1-score: 0.7194871794871794
+
+Class normal: AUC = 0.8860
+Class normal renal function: AUC = 0.8603
+Class renal dysfunction: AUC = 0.8330
+
+Class normal: Best Threshold Value = 0.2000
+Class normal renal function: Best Threshold Value = 0.0588
+Class renal dysfunction: Best Threshold Value = 0.0000
+
+
+Class normal: Sensitivity = 0.6957, Specificity = 0.9730, Accuracy = 0.8667
+Class normal renal function: Sensitivity = 0.9259, Specificity = 0.6061, Accuracy = 0.7500
+Class renal dysfunction: Sensitivity = 0.3000, Specificity = 0.9600, Accuracy = 0.8500
